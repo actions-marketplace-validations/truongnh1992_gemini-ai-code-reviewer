@@ -1,3 +1,6 @@
+## Google Cloud credits are provided for this project `#VertexAISprint`
+Thanks, [Google](https://github.com/google) :)
+
 # Gemini AI Code Reviewer
 
 A GitHub Action that automatically reviews pull requests using Google's Gemini AI.
@@ -7,7 +10,9 @@ A GitHub Action that automatically reviews pull requests using Google's Gemini A
 - Review your PRs using Gemini API
 - Give use comments and suggestions to improve the source codes
 
-![Demo](./Demo.png)
+![Demo](assets/img/Demo.png)
+![Demo2](assets/img/Demo2.png)
+[Video Demo](https://www.youtube.com/watch?v=pc1ffEFMIQo)
 
 ## Setup
 
@@ -55,14 +60,14 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - uses: truongnh1992/gemini-ai-code-reviewer@latest
+      - uses: truongnh1992/gemini-ai-code-reviewer@main
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_MODEL: gemini-1.5-pro-002 # Optional, default is `gemini-1.5-flash-002`
-          INPUT_EXCLUDE: "*.md,*.txt,package-lock.json,*.yml,*.yaml"
+          GEMINI_MODEL: gemini-2.5-pro # Optional, default is `gemini-2.5-flash`
+          EXCLUDE: "*.md,*.txt,package-lock.json,*.yml,*.yaml"
 ```
-> if you don't set `GEMINI_MODEL`, the default model is `gemini-1.5-flash-002`. `gemini-1.5-flash-002` can be used for generating code, extracting data, edit text, and more. Best for tasks balancing performance and cost. For the detailed information about the models, please refer to [Gemini models](https://ai.google.dev/gemini-api/docs/models/gemini).
+> if you don't set `GEMINI_MODEL`, the default model is `gemini-2.5-flash`. `gemini-2.5-flash` is a next-generation model offering speed and multimodal generation capabilities.  It's suitable for a wide variety of tasks, including code generation, data extraction, and text editing.. For the detailed information about the models, please refer to [Gemini models](https://ai.google.dev/gemini-api/docs/models/gemini).
 4. Commit codes to your repository, and working on your pull requests.
 5. When you're ready to review the PR, you can trigger the workflow by commenting `/gemini-review` in the PR.
 
@@ -78,3 +83,7 @@ This GitHub Action uses the Gemini AI API to provide code review feedback. It wo
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+
+## Star History ⭐️
+
+[![Star History Chart](https://api.star-history.com/svg?repos=truongnh1992/gemini-ai-code-reviewer&type=Date)](https://star-history.com/#truongnh1992/gemini-ai-code-reviewer&Date)
